@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap');
+
 :root {
   --main-color: #010162;
   --darker-color: #1a1a37;
@@ -13,4 +15,9 @@
 html {
   color: white;
   background-color: var(--main-color);
+  font-family: 'Libre Caslon Text', serif;
+}
+
+h2 {
+  font-size: 2rem;
 }
