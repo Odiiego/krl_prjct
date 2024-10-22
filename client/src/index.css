@@ -1,0 +1,16 @@
+:root {
+  --main-color: #010162;
+  --darker-color: #1a1a37;
+  --accent-color: #cc9934;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  color: white;
+  background-color: var(--main-color);
+}
