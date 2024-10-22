@@ -1,19 +1,32 @@
 import { StrictMode } from 'react';
-import App from './App.jsx';
 import './index.css';
 
 import * as ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './components/Home/Home.jsx';
+import Cadastro from './components/Home/Forms/Cadastro.jsx';
+import Login from './components/Home/Forms/Login.jsx';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <App />,
+    element: <Home />,
   },
   {
-    path: '/aff',
-    element: <Home />,
+    path: '/cadastro',
+    element: (
+      <Home>
+        <Cadastro />
+      </Home>
+    ),
+  },
+  {
+    path: '/login',
+    element: (
+      <Home>
+        <Login />
+      </Home>
+    ),
   },
 ]);
 
