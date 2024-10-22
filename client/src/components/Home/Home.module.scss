@@ -1,0 +1,44 @@
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 100vh;
+
+  .logo {
+    width: 300px;
+    margin-top: 1rem;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 0;
+    margin: 2rem 0;
+    gap: 2rem;
+    border-radius: 2rem;
+    background-color: var(--accent-color);
+    width: 20rem;
+
+    &__option {
+      p {
+        font-size: 1.1rem;
+        margin-bottom: 0.2rem;
+      }
+
+      a {
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        width: 12rem;
+        padding: 0.75rem 0;
+        font-size: 1.2rem;
+        border-radius: 1rem;
+        border: none;
+        background-color: var(--darker-color);
+        color: white;
+      }
+    }
+  }
+}
