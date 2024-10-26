@@ -1,0 +1,27 @@
+.userSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  &__nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 2rem;
+
+    &Item {
+      display: block;
+      text-align: center;
+      border-radius: 1rem;
+      font-size: 2rem;
+      width: 15rem;
+      padding: 1rem 0;
+      text-decoration: none;
+      color: var(--darker-color);
+      background-color: var(--accent-color);
+    }
+  }
+}
