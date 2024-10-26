@@ -3,29 +3,37 @@ import './index.css';
 
 import * as ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Home from './components/Home/Home.jsx';
-import Cadastro from './components/Home/Forms/Cadastro.jsx';
-import Login from './components/Home/Forms/Login.jsx';
+import Layout from './components/Layout.jsx';
+// import UserSection from './components/UserSection/UserSection.jsx';
+import Cadastro from './components/Forms/Cadastro.jsx';
+import Login from './components/Forms/Login.jsx';
+import CadastrarCliente from './components/Forms/CadastrarCliente.jsx';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Home />,
+    // element: <Layout />,
+    // element: <UserSection />,
+    element: (
+      <Layout>
+        <CadastrarCliente />
+      </Layout>
+    ),
   },
   {
     path: '/cadastro',
     element: (
-      <Home>
+      <Layout>
         <Cadastro />
-      </Home>
+      </Layout>
     ),
   },
   {
     path: '/login',
     element: (
-      <Home>
+      <Layout>
         <Login />
-      </Home>
+      </Layout>
     ),
   },
 ]);

@@ -1,5 +1,17 @@
+import { signIn } from '../utils';
 import styles from './Form.module.scss';
 import { useForm } from 'react-hook-form';
+import { collection, addDoc } from 'firebase/firestore';
+import { db } from '../../../firebase-config';
+
+async function teste() {
+  const docRef = await addDoc(collection(db, 'users'), {
+    first: 'Ada',
+    last: 'Lovelace',
+    born: 1815,
+  });
+  console.log('Document written with ID: ', docRef.id);
+}
 
 export default function Login() {
   const {
@@ -7,17 +19,20 @@ export default function Login() {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => signIn(data.email, data.senha);
 
   return (
     <>
-      <h2>Cadastrar</h2>
+      <button type="button" onClick={teste}>
+        teste
+      </button>
+      <h2>Entrar</h2>
       <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
         <label>
-          Email/CPF
+          Email
           <input
-            placeholder="Email/CPF"
-            {...register('emailOuCPF', {
+            placeholder="Email"
+            {...register('email', {
               required: 'Esse campo é obrigatório',
               // pattern: colocar regex de email,
             })}
@@ -36,7 +51,7 @@ export default function Login() {
           {errors.senha && <span>Valor inválido</span>}
         </label>
 
-        <button type="button">Entrar</button>
+        <button type="submit">Entrar</button>
       </form>
     </>
   );

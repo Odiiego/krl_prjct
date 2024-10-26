@@ -1,3 +1,4 @@
+import { createUser } from '../utils';
 import styles from './Form.module.scss';
 import { useForm } from 'react-hook-form';
 
@@ -7,7 +8,7 @@ export default function Cadastro() {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => createUser(data.email, data.senha);
 
   return (
     <>
@@ -70,7 +71,7 @@ export default function Cadastro() {
           />
           {errors.confirmacaoSenha && <span>Valor inválido</span>}
         </label>
-        <button type="button">Cadastrar</button>
+        <button type="submit">Cadastrar</button>
       </form>
     </>
   );

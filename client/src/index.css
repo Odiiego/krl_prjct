@@ -21,3 +21,8 @@ html {
 h2 {
   font-size: 2rem;
 }
+
+.logo {
+  width: 300px;
+  margin-top: 1rem;
+}
