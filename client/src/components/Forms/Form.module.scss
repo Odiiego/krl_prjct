@@ -1,0 +1,30 @@
+.form {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    display: flex;
+    flex-direction: column;
+    text-indent: 0.5rem;
+    margin-bottom: 0.5rem;
+
+    & > input,
+    & > select {
+      border: 1px solid white;
+      padding: 0.3rem 0.5rem;
+      border-radius: 0.5rem;
+      width: 30ch;
+    }
+  }
+
+  & > button {
+    text-decoration: none;
+    padding: 0.5rem 0;
+    font-size: 1.2rem;
+    border-radius: 0.75rem;
+    border: none;
+    background-color: var(--darker-color);
+    color: white;
+    cursor: pointer;
+  }
+}
